@@ -1,0 +1,7 @@
+---
+pipeline:
+  test_dns_resolution:
+    image: fedora:25
+    commands:
+      - dnf install -y bind-utils
+      - host elasticsearch.logging.svc.cluster.local
