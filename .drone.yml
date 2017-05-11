@@ -2,6 +2,9 @@
 pipeline:
   test_dns_resolution:
     image: fedora:25
+    network_mode: bridge
+    dns:
+      - 10.200.0.10
     commands:
       - dnf install -y bind-utils
       - host elasticsearch.logging.svc.cluster.local
